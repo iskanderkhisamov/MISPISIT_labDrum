@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="250.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="400.0" minHeight="100.0" prefHeight="200.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <BarChart fx:id="barChart" legendVisible="false" GridPane.columnSpan="3" GridPane.rowIndex="5">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Label prefHeight="17.0" prefWidth="240.0" text="Максимальный радиус электрона (см)" />
+      <Label prefHeight="17.0" prefWidth="239.0" text="Время обработки (с)" GridPane.rowIndex="1" />
+      <Label prefHeight="17.0" prefWidth="239.0" text="Количество слоев" GridPane.rowIndex="2" />
+      <Button fx:id="doButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btn" prefHeight="25.0" prefWidth="614.0" text="Расчет" GridPane.columnSpan="3" GridPane.rowIndex="4" />
+      <TextField fx:id="maxRadiusJTF" GridPane.columnIndex="1" GridPane.columnSpan="2" />
+      <TextField fx:id="timeJTF" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+      <TextField fx:id="layersCountJTF" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+      <Label prefHeight="17.0" prefWidth="581.0" text="Математическое ожидание:" GridPane.rowIndex="6" />
+      <Label prefHeight="17.0" prefWidth="585.0" text="Среднее квадратическое отклонение:" GridPane.rowIndex="7" />
+      <Label fx:id="averageLabel" prefHeight="17.0" prefWidth="331.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+      <Label fx:id="meanLabel" prefHeight="17.0" prefWidth="331.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+      <Pane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="3">
+         <children>
+            <HBox prefHeight="10.0" prefWidth="580.0" spacing="100.0">
+               <children>
+                  <RadioButton fx:id="radioButton1" mnemonicParsing="false" selected="true" text="dt = 1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="group" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radioButton2" mnemonicParsing="false" text="dt = 2" toggleGroup="$group" />
+                  <RadioButton fx:id="radioButton4" mnemonicParsing="false" text="dt = 4" toggleGroup="$group" />
+                  <RadioButton fx:id="radioButton6" mnemonicParsing="false" text="dt = 6" toggleGroup="$group" />
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</GridPane>
